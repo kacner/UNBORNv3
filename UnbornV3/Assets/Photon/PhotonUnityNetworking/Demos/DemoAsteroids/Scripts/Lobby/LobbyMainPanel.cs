@@ -98,7 +98,7 @@ namespace Photon.Pun.Demo.Asteroids
         {
             string roomName = "Room " + Random.Range(1000, 10000);
 
-            RoomOptions options = new RoomOptions {MaxPlayers = 8};
+            RoomOptions options = new RoomOptions {MaxPlayers = 2};
 
             PhotonNetwork.CreateRoom(roomName, options, null);
         }
@@ -272,7 +272,7 @@ namespace Photon.Pun.Demo.Asteroids
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
 
-            PhotonNetwork.LoadLevel("DemoAsteroids-GameScene");
+            PhotonNetwork.LoadLevel("SampleScene"); // loading level sectshon or somthing <----------------------------------------------------------------------------- here 
         }
 
         #endregion
