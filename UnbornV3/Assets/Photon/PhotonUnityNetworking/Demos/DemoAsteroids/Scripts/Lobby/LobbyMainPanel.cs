@@ -8,6 +8,9 @@ namespace Photon.Pun.Demo.Asteroids
 {
     public class LobbyMainPanel : MonoBehaviourPunCallbacks
     {
+        [Header("SeanLoader")]
+        public string SceanLoaderName; [Tooltip("put in the exact name dont leave a spce otherwise it will not load")]
+
         [Header("Login Panel")]
         public GameObject LoginPanel;
 
@@ -272,7 +275,7 @@ namespace Photon.Pun.Demo.Asteroids
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
 
-            PhotonNetwork.LoadLevel("SampleScene"); // loading level sectshon or somthing <----------------------------------------------------------------------------- here 
+            PhotonNetwork.LoadLevel(SceanLoaderName); // loading level sectshon or somthing <----------------------------------------------------------------------------- here 
         }
 
         #endregion
