@@ -61,27 +61,20 @@ public class DeckSystem : MonoBehaviourPun
 
             if (cardPrefab != null && spawningPoint != null)
             {
-                // Check if the prefab has a PhotonView component
+
                 PhotonView prefabPhotonView = cardPrefab.GetComponent<PhotonView>();
                 if (prefabPhotonView == null)
                 {
-                    Debug.LogError($"Card prefab '{cardPrefab.name}' doesn't have a PhotonView component! " + "Add a PhotonView component to the prefab or use regular Instantiate instead.");
-
                     GameObject newCard = Instantiate(cardPrefab, spawningPoint.position, spawningPoint.rotation);
                     newCard.transform.SetParent(spawningPoint);
                 }
                 else
                 {
-                    // Use PhotonNetwork.Instantiate for networked objects
                     GameObject newCard = PhotonNetwork.Instantiate("Cards/" + cardPrefab.name,spawningPoint.position, spawningPoint.rotation);
                     if (newCard != null)
-                    {
                         newCard.transform.SetParent(spawningPoint);
-                    }
                     else
-                    {
                         Debug.LogError("PhotonNetwork.Instantiate returned null!");
-                    }
                 }
             }
             else

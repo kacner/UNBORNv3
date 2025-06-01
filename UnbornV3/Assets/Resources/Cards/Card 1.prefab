@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2537470805854582785}
   - component: {fileID: 6289812053950334544}
   - component: {fileID: -3709616607764628013}
+  - component: {fileID: -106823100475319276}
   m_Layer: 5
   m_Name: Card 1
   m_TagString: Untagged
@@ -36,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 307, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 54.6272, y: 51.5917}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2537470805854582785
 CanvasRenderer:
@@ -98,3 +99,19 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &-106823100475319276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4081520675628837182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eafd5d18d843c334780f964abf995e3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movmentSystem: 500
+  followMouseCurserSpeed: 0
+  home: 0
+  playerHand: {fileID: 0}

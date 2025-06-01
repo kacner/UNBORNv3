@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 211818959}
   - component: {fileID: 211818958}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: -- GameManager - -
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,9 +731,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1036945236}
   m_Layer: 5
-  m_Name: SpawningPoint (1)
+  m_Name: 'SpawningPoint '
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -751,11 +751,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1572930777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -162.33594}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -149, y: 200}
+  m_SizeDelta: {x: 27.8187, y: 100}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!1 &1527092234
 GameObject:
   m_ObjectHideFlags: 0
@@ -904,7 +904,7 @@ GameObject:
   - component: {fileID: 1572930778}
   m_Layer: 5
   m_Name: -- DeckSystem --
-  m_TagString: Untagged
+  m_TagString: Deck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -924,9 +924,9 @@ RectTransform:
   - {fileID: 1036945236}
   m_Father: {fileID: 617635215}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1572930778
