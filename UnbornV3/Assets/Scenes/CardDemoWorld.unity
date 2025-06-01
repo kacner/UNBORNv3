@@ -508,9 +508,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies: []
   CardsPlayer1:
-  - {fileID: 4081520675628837182, guid: a61b1d63ed17b8748b557246f5697b24, type: 3}
+  - {fileID: 4081520675628837182, guid: 6b97270fd22866245b66870e7eb4c174, type: 3}
   CardsPlayer2:
-  - {fileID: 4081520675628837182, guid: bb0606c28d034f74a9c1260f91998a1a, type: 3}
+  - {fileID: 4081520675628837182, guid: 43b16961c7675e34bbc02592ffb91e4a, type: 3}
 --- !u!4 &211818959
 Transform:
   m_ObjectHideFlags: 0

@@ -21,6 +21,22 @@ public class DeckSystem : MonoBehaviourPun
         if (gameManager == null)
             gameManager = FindObjectOfType<GameManager>();
 
+        // Add null check for gameManager
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager not found! Make sure there's a GameManager in the scene.");
+            enabled = false;
+            return;
+        }
+
+        // Add null check for spawning point
+        if (spawningPoint == null)
+        {
+            Debug.LogError("Spawning point is not assigned!");
+            enabled = false;
+            return;
+        }
+
         // Disable this component for other players
         if (!photonView.IsMine)
             enabled = false;
@@ -44,13 +60,39 @@ public class DeckSystem : MonoBehaviourPun
         for (int i = cardsAmount; i < cardsMax; i++)
         {
             bool isPlayer1 = PhotonNetwork.LocalPlayer.ActorNumber == 1;
-
             GameObject cardPrefab = gameManager.CardSummon(isPlayer1);
 
             if (cardPrefab != null && spawningPoint != null)
             {
-                GameObject newCard = PhotonNetwork.Instantiate(cardPrefab.name, spawningPoint.position, spawningPoint.rotation);
-                newCard.transform.SetParent(spawningPoint); // Optional parenting
+                // Check if the prefab has a PhotonView component
+                PhotonView prefabPhotonView = cardPrefab.GetComponent<PhotonView>();
+                if (prefabPhotonView == null)
+                {
+                    Debug.LogError($"Card prefab '{cardPrefab.name}' doesn't have a PhotonView component! " + "Add a PhotonView component to the prefab or use regular Instantiate instead.");
+
+                    GameObject newCard = Instantiate(cardPrefab, spawningPoint.position, spawningPoint.rotation);
+                    newCard.transform.SetParent(spawningPoint);
+                }
+                else
+                {
+                    // Use PhotonNetwork.Instantiate for networked objects
+                    GameObject newCard = PhotonNetwork.Instantiate("Cards/" + cardPrefab.name,spawningPoint.position, spawningPoint.rotation);
+                    if (newCard != null)
+                    {
+                        newCard.transform.SetParent(spawningPoint);
+                    }
+                    else
+                    {
+                        Debug.LogError("PhotonNetwork.Instantiate returned null!");
+                    }
+                }
+            }
+            else
+            {
+                if (cardPrefab == null)
+                    Debug.LogError("CardSummon returned null prefab!");
+                if (spawningPoint == null)
+                    Debug.LogError("Spawning point is null!");
             }
 
             cardsAmount++;
@@ -59,6 +101,5 @@ public class DeckSystem : MonoBehaviourPun
 
         needCards = false;
         isAddingCards = false;
-        yield return null;
     }
 }
