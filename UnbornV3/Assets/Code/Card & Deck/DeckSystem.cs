@@ -37,9 +37,6 @@ public class DeckSystem : MonoBehaviourPun
             return;
         }
 
-        // Disable this component for other players
-        if (!photonView.IsMine)
-            enabled = false;
     }
 
     void Update()
