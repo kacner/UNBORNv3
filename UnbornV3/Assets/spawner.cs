@@ -1,12 +1,16 @@
 using UnityEngine;
+using Photon.Pun;
 
-public class spawner : MonoBehaviour
+public class spawner : MonoBehaviourPun
 {
-    public GameObject prefag;
+    public GameObject prefab;
 
     public void spawn()
     {
-        GameObject spawn = Instantiate(prefag, transform.position, Quaternion.identity);
-        GameManager.Instance.Enemies.Add(spawn.transform);
+        if (PhotonNetwork.IsMasterClient)
+        {
+            GameObject spawn = PhotonNetwork.Instantiate(prefab.name, transform.position, Quaternion.identity);
+            GameManager.Instance.Enemies.Add(spawn.transform);
+        }
     }
 }

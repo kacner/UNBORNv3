@@ -1,6 +1,7 @@
 using UnityEngine;
+using Photon.Pun;
 
-public class move : MonoBehaviour
+public class move : MonoBehaviourPun
 {
     public float movespeed = 0.1f;
     private void FixedUpdate()

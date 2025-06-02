@@ -5,6 +5,8 @@ using Photon.Pun;
 public class DeckSystem : MonoBehaviourPun
 {
     [SerializeField] private GameManager gameManager;
+    [HideInInspector] public  bool playerIsOne;
+    
     public int cardsAmount;
     public int cardsMax;
     public float cardsRefreshRateAmount;
@@ -20,6 +22,11 @@ public class DeckSystem : MonoBehaviourPun
 
         if (gameManager == null)
             gameManager = FindObjectOfType<GameManager>();
+
+        if (gameManager.isPlayer1 = PhotonNetwork.LocalPlayer.ActorNumber == 1)
+            gameManager.UiActivashon(true);
+        else
+            gameManager.UiActivashon(false);
 
         // Add null check for gameManager
         if (gameManager == null)

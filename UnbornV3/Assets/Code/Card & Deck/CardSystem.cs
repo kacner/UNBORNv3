@@ -12,7 +12,9 @@ public class CardSystem : MonoBehaviourPun
     void Start()
     {
         GameObject playerHand = GameObject.FindGameObjectWithTag("Deck");
-
+        Debug.Log("godshotmeforihavefileyouforthelasttime");
+       /* if (playerHand != null)
+            gameObject.SetActive = false;*/
         home = true;
     }
 
